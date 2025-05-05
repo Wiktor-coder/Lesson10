@@ -1,4 +1,3 @@
-import java.lang.IllegalArgumentException;
 
 public class PasswordChecker {
     private Integer minLength;

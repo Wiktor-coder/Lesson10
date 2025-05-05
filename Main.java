@@ -3,18 +3,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        PasswordChecker checker = new PasswordChecker();
 
         try (sc) {
+
             System.out.println("Введите минимальную длинну пароля: ");
             int minLength = sc.nextInt();
+            checker.setMinLength(minLength);
 
             System.out.println("Введите максимальное допустимое количество повторяющихся символов подряд: ");
             int maxRepeats = sc.nextInt();
-            sc.nextLine();
-
-            PasswordChecker checker = new PasswordChecker();
-            checker.setMinLength(minLength);
             checker.setMaxRepeats(maxRepeats);
+            sc.nextLine();
 
             while (true) {
                 System.out.println("Введите пароль или end: ");
